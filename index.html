@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OZX Services</title>
+
+<!-- Favicon for browser tab -->
+<link rel="icon" type="image/png" href="image/favicon.png">
+
+<!-- Default meta description for SEO -->
+<meta name="description" content="OZX Services provides digital solutions across web design, gaming, graphics, study help, and social media services.">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Poppins, Arial, sans-serif;
+        background: #0a1a2f;
+        color: #00ffff;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 40px;
+        background: #102542;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        gap: 150px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 60px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        cursor: pointer;
+        transition: transform 0.25s ease;
+        font-size: 18px;
+        color: #00ffff;
+        font-weight: 600;
+    }
+
+    nav ul li:hover {
+        transform: scale(1.15);
+        color: white;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: absolute;
+        right: 40px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    /* HERO IMAGE */
+    .hero {
+        width: 100%;
+        height: 75vh;
+        background: url('image/mainimg.png') center/cover no-repeat;
+        border: 5px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        font-weight: bold;
+        cursor: pointer;
+        color: cyan;
+        text-shadow: 3px 3px 10px #000;
+        transition: transform .3s;
+    }
+
+    .hero:hover {
+        transform: scale(1.01);
+    }
+
+    /* CATEGORY GRID */
+    .categories-section {
+        padding: 40px;
+        text-align: center;
+    }
+
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .category-card {
+        border: 4px solid black;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #00ffff;
+        transition: 0.25s;
+        text-shadow: 2px 2px 6px #000;
+    }
+
+    .category-card:hover {
+        transform: scale(1.08);
+        color: white;
+    }
+
+    /* SERVICE LIST */
+    .service-list {
+        padding: 40px;
+        text-align: center;
+    }
+
+    .service-item {
+        background: #102542;
+        border: 2px solid #20567d;
+        padding: 18px;
+        margin: 12px auto;
+        width: 60%;
+        color: #00ffff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: .25s;
+    }
+
+    .service-item:hover {
+        transform: scale(1.05);
+        background: #1c3f63;
+        color: white;
+    }
+
+    /* INQUIRY FORM */
+    .inquiry-form {
+        padding: 40px;
+        text-align: center;
+    }
+
+    input, textarea {
+        width: 60%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background: #102542;
+        color: cyan;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 14px 26px;
+        background: #008cff;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        transition: .25s;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        transform: scale(1.08);
+        background: #00aaff;
+    }
+
+    /* WORKS SECTION */
+    .work-item {
+        border: 4px solid black;
+        height: 160px;
+        margin: 20px auto;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: cyan;
+        font-size: 24px;
+        cursor: pointer;
+        transition: .25s;
+        text-shadow: 2px 2px 8px #000;
+    }
+
+    .work-item:hover {
+        transform: scale(1.05);
+        color: white;
+    }
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li onclick="showPage('home')">HOME</li>
+        <li onclick="showPage('categories')">CATEGORIES</li>
+        <li onclick="showPage('inquiry')">INQUIRY</li>
+        <li onclick="showPage('works')">OUR WORKS</li>
+    </ul>
+    <img src="image/logo.png" class="logo">
+</nav>
+
+<!-- HOME -->
+<div id="home" style="display:block;">
+    <div class="hero" onclick="showPage('categories')">OZX Services</div>
+
+    <div class="categories-section">
+        <h2>Welcome to OZX Services</h2>
+        <p>We provide digital solutions across web design, gaming, graphics, study help, and social media services.</p>
+
+        <div class="category-grid">
+            <div class="category-card" style="background:url('image/code.jpeg') center/cover;" onclick="openCategory('web')">WEB DESIGN</div>
+            <div class="category-card" style="background:url('image/graphic.jpeg') center/cover;" onclick="openCategory('graphic')">GRAPHIC DESIGNING</div>
+            <div class="category-card" style="background:url('image/gaming.jpeg') center/cover;" onclick="openCategory('gaming')">GAMING</div>
+            <div class="category-card" style="background:url('image/research.jpeg') center/cover;" onclick="openCategory('study')">STUDY</div>
+            <div class="category-card" style="background:url('image/social.jpeg') center/cover;" onclick="openCategory('social')">SOCIAL MEDIA</div>
+        </div>
+    </div>
+</div>
+
+<!-- CATEGORY PAGE -->
+<div id="categories" style="display:none;" class="categories-section">
+    <h2>All Service Categories</h2>
+    <p>Select a category to explore detailed services.</p>
+
+    <div class="category-grid">
+        <div class="category-card" style="background:url('image/code.jpeg') center/cover;" onclick="openCategory('web')">WEB DESIGN</div>
+        <div class="category-card" style="background:url('image/graphic.jpeg') center/cover;" onclick="openCategory('graphic')">GRAPHIC DESIGNING</div>
+        <div class="category-card" style="background:url('image/gaming.jpeg') center/cover;" onclick="openCategory('gaming')">GAMING</div>
+        <div class="category-card" style="background:url('image/research.jpeg') center/cover;" onclick="openCategory('study')">STUDY</div>
+        <div class="category-card" style="background:url('image/social.jpeg') center/cover;" onclick="openCategory('social')">SOCIAL MEDIA</div>
+    </div>
+</div>
+
+<!-- SERVICES PAGE -->
+<div id="services" style="display:none;" class="service-list">
+    <h2 id="service-title"></h2>
+    <p id="service-desc"></p>
+    <div id="service-items"></div>
+</div>
+
+<!-- INQUIRY -->
+<div id="inquiry" style="display:none;" class="inquiry-form">
+    <h2>Inquiry Form</h2>
+    <p>Have a question or custom request? Send us a message.</p>
+
+    <form action="https://formsubmit.co/ozexthor@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="message" rows="5" placeholder="Your Inquiry..." required></textarea>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">Submit Inquiry</button>
+    </form>
+</div>
+
+<!-- WORKS PAGE -->
+<div id="works" style="display:none;" class="categories-section">
+    <h2>Our Works</h2>
+    <p>Click on a category to see completed projects or request direct access.</p>
+
+    <div class="work-item" style="background:url('image/code.jpeg') center/cover;" onclick="openWebWorks()">Web Design Works</div>
+    <div class="work-item" style="background:url('image/graphic.jpeg') center/cover;" onclick="openGraphicWorks()">Graphic Design Works</div>
+    <div class="work-item" style="background:url('image/gaming.jpeg') center/cover;" onclick="openGamingAssets()">Gaming Assets</div>
+</div>
+
+<script>
+    const discordLink = "https://discord.gg/mnKtKAQW";
+    const webProjects = [
+        "https://discord.gg/mnKtKAQW",
+    ];
+
+    const services = {
+        web: {
+            desc: "We build modern, optimized, responsive websites with complete backend & frontend integration.",
+            items: ["Frontend", "Backend", "Web Fixes", "Web Template Designing"]
+        },
+        graphic: {
+            desc: "We design professional thumbnails, logos, posters, ads, merch, and animations.",
+            items: ["Thumbnail", "Editing", "Poster Designing", "Ads Designing", "Cloth/Mug Designing", "Logo Designing", "Animation"]
+        },
+        gaming: {
+            desc: "We create game mods, skins, development assets, and offer grinding services.",
+            items: ["Minecraft Mod Making", "Minecraft 3D Skin Making", "In-Game Grinding", "Roblox Development"]
+        },
+        study: {
+            desc: "We provide research assistance and study tool guidance.",
+            items: ["Study Tool Guide", "Study Related Research"]
+        },
+        social: {
+            desc: "We manage social media channels, create brand designs, and schedule video uploads.",
+            items: ["Channel/Profile Management", "Channel Design", "Video Scheduling"]
+        }
+    };
+
+    function showPage(page) {
+        document.querySelectorAll("body > div").forEach(div => div.style.display = "none");
+        document.getElementById(page).style.display = "block";
+
+        const titleMap = {
+            home: "OZX Services - Home",
+            categories: "OZX Services - Categories",
+            services: "OZX Services - Services",
+            inquiry: "OZX Services - Inquiry",
+            works: "OZX Services - Our Works"
+        };
+
+        const descMap = {
+            home: "Welcome to OZX Services. We provide web design, gaming, graphics, study help, and social media services.",
+            categories: "Explore all service categories offered by OZX Services.",
+            services: "Discover detailed services for Web Design, Graphics, Gaming, Study, and Social Media.",
+            inquiry: "Submit your inquiries or custom requests to OZX Services.",
+            works: "View completed projects across Web Design, Graphics, and Gaming by OZX Services."
+        };
+
+        document.title = titleMap[page];
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if(metaDesc) {
+            metaDesc.setAttribute("content", descMap[page]);
+        }
+    }
+
+    function openCategory(cat) {
+        showPage("services");
+
+        document.getElementById("service-title").innerText = cat.toUpperCase();
+        document.getElementById("service-desc").innerText = services[cat].desc;
+
+        let html = "";
+        services[cat].items.forEach(s => {
+            html += `<div class='service-item' onclick="window.location='${discordLink}'">${s}</div>`;
+        });
+        document.getElementById("service-items").innerHTML = html;
+
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if(metaDesc) {
+            metaDesc.setAttribute("content", services[cat].desc);
+        }
+
+        document.title = `OZX Services - ${cat.toUpperCase()}`;
+    }
+
+    function openGraphicWorks() { window.location = discordLink; }
+    function openGamingAssets() { window.location = discordLink; }
+    function openWebWorks() {
+        if (webProjects.length > 0) {
+            window.location = webProjects[0];
+        }
+    }
+</script>
+
+</body>
+</html>
